@@ -1,0 +1,26 @@
+---
+layout: page
+title: Blog
+subtitle: Notes on GPU kernels, ML systems, and things I'm learning.
+permalink: /blog/
+---
+
+{% assign visible_posts = site.posts | where_exp: "p", "p.hidden != true" %}
+{% if visible_posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in visible_posts %}
+      <li class="post-list-item">
+        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.summary or post.excerpt %}
+          <p class="post-summary">{{ post.summary | default: post.excerpt | strip_html | truncate: 200 }}</p>
+        {% endif %}
+        {% if post.tags and post.tags.size > 0 %}
+          <div>{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p style="color: var(--text-muted);">No posts yet.</p>
+{% endif %}

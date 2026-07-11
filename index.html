@@ -1,1 +1,60 @@
-Hello World
+---
+layout: default
+---
+<section class="home-hero">
+  <h1>{{ site.title }}</h1>
+  <p class="tagline">{{ site.tagline }}</p>
+
+  <p class="bio">
+    I'm a PhD student in Computer Science at the
+    <a href="https://www.cs.utah.edu/" target="_blank" rel="noopener">University of Utah</a>,
+    working in the High Performance Computing Lab on GPU kernel optimization and ML systems.
+    Lately I've been writing Triton kernels for transformer inference, building GPU profilers
+    to catch warp idleness, and pruning autotuning search spaces for CNNs.
+  </p>
+
+  <p class="bio">
+    Previously: MS at BYU (handwriting recognition, open-set classification), data science intern at
+    Ancestry, and full-stack SWE at BYU Broadcasting.
+  </p>
+</section>
+
+<section class="home-section">
+  <div class="home-section-header">
+    <h2>featured work</h2>
+    <a class="more-link" href="{{ '/projects/' | relative_url }}">all projects →</a>
+  </div>
+  <div class="featured-grid">
+    {% assign featured = site.projects | where: "featured", true | sort: "order" %}
+    {% for p in featured %}
+      <a class="featured-card" href="{{ p.url | relative_url }}">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.summary }}</p>
+        <div class="card-meta">{{ p.dates }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="home-section-header">
+    <h2>latest posts</h2>
+    <a class="more-link" href="{{ '/blog/' | relative_url }}">all posts →</a>
+  </div>
+  {% assign visible_posts = site.posts | where_exp: "p", "p.hidden != true" %}
+  {% if visible_posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in visible_posts limit: 3 %}
+        <li class="post-list-item">
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.summary or post.excerpt %}
+            <p class="post-summary">{{ post.summary | default: post.excerpt | strip_html | truncate: 160 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p style="color: var(--text-muted);">No posts yet.</p>
+  {% endif %}
+</section>

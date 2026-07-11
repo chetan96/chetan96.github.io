@@ -1,0 +1,70 @@
+education:
+  - school: University of Utah
+    degree: PhD in Computer Science
+    location: Salt Lake City, UT
+    dates: May 2024 – Present
+    note: Graduate Research Assistant · High Performance Computing Lab
+
+  - school: Brigham Young University
+    degree: MS in Computer Science
+    location: Provo, UT
+    dates: Sep 2021 – April 2024
+    note: Research Assistant · Family History Technology Lab
+
+  - school: G. B. Pant University of Agriculture & Technology
+    degree: Bachelor of Computer Engineering
+    location: Pantnagar, India
+    dates: Aug 2014 – June 2018
+
+work:
+  - role: Graduate Research Assistant
+    org: High Performance Computing Lab, University of Utah
+    location: Salt Lake City, UT
+    dates: May 2024 – Present
+    highlights:
+      - "Characterized the search space for autotuning CNN kernels based on geometry and family; pruned search space by 20% for standard convolutions."
+      - "Improved ResNet-50 speed by 30% by vectorizing sequential code for the Global Average Pooling operator while preserving numerical correctness."
+      - "Reduced MobileNetV2 model size by 6× using Neural Architecture Search + a proxy score, retaining 90% accuracy on animal-ecology datasets."
+
+  - role: Graduate Research Assistant
+    org: Family History Technology Lab, BYU
+    location: Provo, UT
+    dates: Sep 2021 – April 2023
+    highlights:
+      - "Improved an open-set document classification model using Segment Anything Model embeddings — achieved 81% accuracy."
+      - "Developed deep-learning models for handwriting recognition, document understanding, NER, and text classification (TensorFlow); reached 85% accuracy and sorted 200,000+ historical records."
+      - "Boosted accuracy by 25% via model tuning, data augmentation, and imbalanced-data handling."
+
+  - role: Data Science Intern
+    org: Ancestry
+    location: Lehi, UT
+    dates: May 2022 – Aug 2022
+    highlights:
+      - "Studied a transformer-based personalized recommender and optimized it for diversity (+20% diverse recommendations)."
+      - "Engineered 18 new feature columns aimed at customer retention (+17%)."
+      - "Conducted data analysis and visualization; presented insights to the data science team."
+
+  - role: Full Stack SWE
+    org: BYU Broadcasting
+    location: Provo, UT
+    dates: Sep 2018 – Aug 2021
+    highlights:
+      - "Built backend services for event snapshotting in an event-driven, domain-driven architecture."
+      - "Resolved platform issues across Web, Xbox, and Samsung clients using JavaScript, Node.js, and Vue 2."
+      - "Developed and debugged applications while collaborating in an agile team."
+
+  - role: Software Engineer
+    org: Tata Consultancy Services
+    location: Indore, India
+    dates: Sep 2018 – Aug 2021
+    highlights:
+      - "Implemented 20+ REST APIs in Java (MVC), reducing manual tasks by 40%."
+      - "Ensured code maintainability and scalability; conducted code reviews and mentored new hires on the SDLC."
+      - "Reduced defects by 80% via SQL data analysis and JUnit tests."
+
+skills:
+  - Python
+  - PyTorch
+  - Triton
+  - CUDA
+  - TVM

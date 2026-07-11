@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      {% for link in site.data.links %}
+        <a href="{{ link.url }}"{% unless link.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ link.name }}</a>
+      {% endfor %}
+    </div>
+    <p class="footer-note">
+      © {{ 'now' | date: '%Y' }} {{ site.author }} · Built with <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+    </p>
+  </div>
+</footer>

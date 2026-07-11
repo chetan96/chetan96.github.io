@@ -1,0 +1,39 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+---
+
+{% assign scholar = site.data.links | where: "name", "Google Scholar" | first %}
+<p>
+  {% if scholar %}<a href="{{ scholar.url }}" target="_blank" rel="noopener">Google Scholar</a> ·{% endif %}
+  <a href="{{ site.cv_pdf | relative_url }}" target="_blank" rel="noopener">CV (PDF)</a>
+</p>
+
+{% assign pubs = site.data.publications | sort: "year" | reverse %}
+{% if pubs.size > 0 %}
+  {% assign current_year = "" %}
+  {% for pub in pubs %}
+    {% if pub.year != current_year %}
+      {% unless forloop.first %}</ul>{% endunless %}
+      <h2 class="pub-year">{{ pub.year }}</h2>
+      <ul class="pub-list">
+      {% assign current_year = pub.year %}
+    {% endif %}
+    <li>
+      <div class="pub-title">{{ pub.title }}</div>
+      {% if pub.authors %}<div class="pub-authors">{{ pub.authors }}</div>{% endif %}
+      <div class="pub-venue">{{ pub.venue }}</div>
+      {% if pub.url != "" or pub.code != "" or pub.bib != "" %}
+        <div class="pub-links">
+          {% if pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener">paper</a>{% endif %}
+          {% if pub.code != "" %}<a href="{{ pub.code }}" target="_blank" rel="noopener">code</a>{% endif %}
+          {% if pub.bib != "" %}<a href="{{ pub.bib | relative_url }}">bib</a>{% endif %}
+        </div>
+      {% endif %}
+    </li>
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+{% else %}
+  <p style="color: var(--text-muted);">No publications yet.</p>
+{% endif %}

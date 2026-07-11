@@ -1,0 +1,67 @@
+# Site
+title: Chetan Joshi
+tagline: PhD Student · GPU Kernels & ML Systems
+description: >-
+  Personal site of Chetan Joshi — PhD student in Computer Science at
+  the University of Utah, working on GPU kernel optimization and ML systems.
+author: Chetan Joshi
+email: u1265142@umail.utah.edu
+url: "https://chetan96.github.io"
+baseurl: ""
+lang: en
+timezone: America/Denver
+
+# Path to your CV PDF (change if you rename the file)
+cv_pdf: "/CV_CHETAN_JOSHI_2026.pdf"
+
+# Build
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+
+# Posts render at /blog/<title>/
+permalink: /blog/:title/
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Layout defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+# Plugins (all GitHub Pages allowlisted)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache

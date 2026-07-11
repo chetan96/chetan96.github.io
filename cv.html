@@ -1,0 +1,44 @@
+---
+layout: page
+title: CV
+permalink: /cv/
+---
+
+<p><a href="{{ site.cv_pdf | relative_url }}" target="_blank" rel="noopener">Download full PDF ↗</a></p>
+
+<h2>Education</h2>
+<div class="cv-section">
+  {% for e in site.data.experience.education %}
+    <div class="cv-entry">
+      <div>
+        <div class="cv-title">{{ e.school }}</div>
+        <div class="cv-org">{{ e.degree }}{% if e.note %} · {{ e.note }}{% endif %}</div>
+        {% if e.location %}<div class="cv-org">{{ e.location }}</div>{% endif %}
+      </div>
+      <div class="cv-dates">{{ e.dates }}</div>
+    </div>
+  {% endfor %}
+</div>
+
+<h2>Experience</h2>
+<div class="cv-section">
+  {% for w in site.data.experience.work %}
+    <div class="cv-entry">
+      <div>
+        <div class="cv-title">{{ w.role }}</div>
+        <div class="cv-org">{{ w.org }}{% if w.location %} · {{ w.location }}{% endif %}</div>
+      </div>
+      <div class="cv-dates">{{ w.dates }}</div>
+      {% if w.highlights %}
+        <ul>
+          {% for h in w.highlights %}<li>{{ h }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<h2>Skills</h2>
+<div class="cv-skills">
+  {% for s in site.data.experience.skills %}<span class="tag">{{ s }}</span>{% endfor %}
+</div>

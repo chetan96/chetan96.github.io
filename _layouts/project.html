@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="project-header">
+    <div class="project-meta">
+      {% if page.dates %}<span>{{ page.dates }}</span>{% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      {% endif %}
+    </div>
+    <h1 class="project-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="project-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+    {% if page.links and page.links.size > 0 %}
+      <div class="project-links">
+        {% for link in page.links %}
+          <a href="{{ link.url }}"{% unless link.url contains '#' %} target="_blank" rel="noopener"{% endunless %}>{{ link.name }} ↗</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {% assign devlog_posts = site.posts | where: "project", page.slug | where_exp: "p", "p.hidden != true" %}
+  {% if devlog_posts.size > 0 %}
+    <section class="project-devlog">
+      <h2>Devlog</h2>
+      <ul class="post-list">
+        {% for post in devlog_posts %}
+          <li class="post-list-item">
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            {% if post.summary or post.excerpt %}
+              <p class="post-summary">{{ post.summary | default: post.excerpt | strip_html | truncate: 160 }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  <footer class="project-footer">
+    <a href="{{ '/projects/' | relative_url }}">← All projects</a>
+  </footer>
+</article>

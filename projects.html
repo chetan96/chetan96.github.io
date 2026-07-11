@@ -1,0 +1,26 @@
+---
+layout: page
+title: Projects
+subtitle: Things I've been building, mostly around GPU kernels and ML systems.
+permalink: /projects/
+---
+
+{% assign projects = site.projects | sort: "order" %}
+{% if projects.size > 0 %}
+  <ul class="project-list">
+    {% for p in projects %}
+      <li class="project-list-item">
+        <h2><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+        <div class="project-meta-line">
+          {{ p.dates }}
+          {% if p.tags and p.tags.size > 0 %}
+            · {% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+          {% endif %}
+        </div>
+        <p class="project-summary">{{ p.summary }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p style="color: var(--text-muted);">No projects yet.</p>
+{% endif %}
