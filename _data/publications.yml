@@ -1,0 +1,19 @@
+# Publications — most recent first.
+# Add a new entry by appending to this list.
+# All fields except `title`, `venue`, `year` are optional.
+
+- title: "Head Tail Open: Open-Tailed Classification of Imbalanced Document Data"
+  authors: "Chetan Joshi, et al."
+  venue: "SAI 2024"
+  year: 2024
+  url: "https://link.springer.com/chapter/10.1007/978-3-031-62281-6_14"
+  code: ""    # optional code link
+  bib: ""     # optional BibTeX file path
+
+- title: "CENSUS-HWR: A Large Training Dataset for Offline Handwriting Recognition"
+  authors: "Chetan Joshi, et al."
+  venue: "CSCI 2023"
+  year: 2023
+  url: "https://ieeexplore.ieee.org/abstract/document/10590583"
+  code: ""
+  bib: ""

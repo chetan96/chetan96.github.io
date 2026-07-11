@@ -1,0 +1,14 @@
+# Social / external links.
+# These appear in the site footer and can be referenced from any page.
+
+- name: Google Scholar
+  url: "https://scholar.google.com/citations?user=jyEHh54AAAAJ&hl=en"
+
+- name: GitHub
+  url: "https://github.com/chetan96"
+
+- name: LinkedIn
+  url: "https://www.linkedin.com/in/chetan-joshi-1996-dehradun/"
+
+- name: Email
+  url: "mailto:u1265142@umail.utah.edu"
