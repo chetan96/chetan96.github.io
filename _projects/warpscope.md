@@ -6,12 +6,9 @@ dates: Feb 2026 – April 2026
 tags: [cuda, nvbit, profiling, flashattention]
 featured: true
 order: 1
-links: []
-  # Add links here when available, for example:
-  # - name: GitHub
-  #   url: "https://github.com/..."
-  # - name: Write-up
-  #   url: "..."
+links:
+  - name: GitHub
+    url: "https://github.com/chetan96/warpscope"
 ---
 
 ## Overview
